@@ -1,0 +1,41 @@
+<!-- main -->
+<main class="basket">
+    <div class="container">
+            <div class="page-main">
+                <h1>Ваша корзина</h1>
+                {{#if isEmpty}}
+                <h5>Корзина пуста, выберите товары</h5>
+                {{else}}
+                <div class="table-responsive">
+                    <table class="table table-hover table-custom spacing8">
+                        <thead class="info-color lighten-4">
+                        <tr>
+                            <th>#</th>
+                            <th>Наименование</th>
+                            <th>Описание</th>
+                            <th>Цена</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each products}}
+                            <tr>
+                                <td scope="row">{{num}}</td>
+                                <td>{{name}}</td>
+                                <td>{{description}}</td>
+                                <td>{{price}}</td>
+                                <td><a class="btn btn-danger remove-product" href="#" role="button" data-id="{{id}}">Удалить</a></td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+                <a href="/order" class="btn btn-lg btn-primary" role="button">Оформить заказ</a>
+                {{/if}}
+            </div>
+        </div>
+</main>
+
+
+<!-- /.main -->

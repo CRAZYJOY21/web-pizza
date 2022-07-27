@@ -1,0 +1,23 @@
+<h1>Управление сайтом <small>(временная страница)</small></h1>
+<h2>Вход</h2>
+
+{{#if user }}
+    <p>Welcome, {{ user.id }}!</p>
+{{ else }}
+    {{#if error }}
+        <p style="color: red">{{error}}</p>
+    {{/if}}
+<form action="/admin/login" method="post">
+    <p>
+        <label for="id">Логин</label>
+        <input name="id">
+    </p>
+    <p>
+        <label for="password">Пароль</label>
+        <input type="password" name="password">
+    </p>
+    <p>
+        <input type="submit" value="Войти">
+    </p>
+</form>
+{{/if}}

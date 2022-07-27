@@ -1,0 +1,42 @@
+<div class="container-fluid mt-5">
+    <div class="card mb-4 wow slideInUp">
+        <div class="card-body d-sm-flex justify-content-between">
+            <h4 class="mb-2 mb-sm-0 pt-1">
+                <span>Пользователи</span>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="blue-grey lighten-4">
+                    <tr>
+                        <th>#</th>
+                        <th>Имя</th>
+                        <th>Почта</th>
+                        <th>Телефон</th>
+                        <th>Адрес</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each users}}
+                        <tr>
+                            <td scope="row">{{num}}</td>
+                            <td>{{name}}</td>
+                            <td>{{id}}</td>
+                            <td>{{phone}}</td>
+                            <td>{{address}}</td>
+                            <td><a href="/admin/contacts?userId={{id}}">Обратная связь</a></td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

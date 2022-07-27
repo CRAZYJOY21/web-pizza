@@ -1,0 +1,202 @@
+<!-- Swiper -->
+<main>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="#"><img src="img/swiper.png" alt="swiper"></a></div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next" style="color: #6B2525; margin-right: 42px;"></div>
+        <div class="swiper-button-prev" style="color: #6B2525; margin-left: 42px;"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination">
+            <span class="swiper-pagination-bullet"></span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="d-flex justify-content-around">
+            <div class="p-2">
+                <img src="img/Group 20.png" alt="gr1">
+                <p class="gr1">ВОЗВРАТ В ТЕЧЕНИИ 30 ДНЕЙ</p>
+            </div>
+            <div class="p-2">
+                <img src="img/Group 21.png" alt="gr2">
+                <p class="gr2">БЕСПЛАТНАЯ ДОСТАВКА</p>
+            </div>
+            <div class="p-2">
+                <img src="img/Group 22.png" alt="gr3">
+                <p class="gr3">КУПОН НА СКИДКУ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="center container-sm">
+        <h1>НАША ЛУЧШАЯ ПИЦЦА</h1>
+    </div>
+    <div class="hidden"></div>
+    <div class="main">
+
+        {{#each groups}}
+        <div class="card-deck">
+            {{#each products}}
+            <div class="card">
+                <img class="card-img-top" src="img/1-pizza.png" alt="1">
+                <div class="card-body">
+                    <h5 class="card-title tag-product-name">{{name}}</h5>
+                    <p class="card-text tag-product-description">{{description}}</p>
+                    <p class="card-text tag-product-price">{{price}} ₽</p>
+                    <button class="btn btn-primary btn-product" data-id="{{id}}">
+                        Выбрать
+                    </button>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+
+<!--
+        {{#each products}}
+            <div class="card">
+                <div class="card-body">
+                    <div class="image">
+                        <a href="#"><img src="img/1-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">345 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        -->
+    </div>
+    <!--<div class="main">
+            <div class="product-layout col-lg-4">
+                <div class="product-thumb transition">
+                    <div class="image">
+                        <a href="#"><img src="img/1-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">345 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-layout col-lg-4">
+                <div class="product-thumb transition">
+                    <div class="image">
+                        <a href="#"><img src="img/2-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">295 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-layout col-lg-4">
+                <div class="product-thumb transition">
+                    <div class="image">
+                        <a href="#"><img src="img/3-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">259 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        <div class="card_2">
+            <div class="product-layout col-lg-4">
+                <div class="product-thumb transition">
+                    <div class="image">
+                        <a href="#"><img src="img/1-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">229 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-layout col-lg-4">
+                <div class="product-thumb transition">
+                    <div class="image">
+                        <a href="#"><img src="img/2-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">245 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-layout col-lg-4">
+                <div class="product-thumb transition">
+                    <div class="image">
+                        <a href="#"><img src="img/3-pizza.png" alt="1"></a>
+                    </div>
+                    <div class="caption">
+                        <h2 class="name_product"><a href="#">Пепперони Фреш с томатами</a></h2>
+                        <p class="info">Пикантная пепперони, томатный соус, моцарелла, томаты</p>
+                        <p class="price_list">455 ₽</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="but product-item">
+                            Выбрать
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</main>
+
+<div class="modal fade" id="cart-notify" tabindex="-1" role="dialog" aria-labelledby="login-form" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="alert alert-primary">
+                    <p class="messages">Товар добавлен в корзину</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Продолжить покупки</button>
+                <a href="/cart" class="btn btn-primary">Перейти в корзину</a>
+            </div>
+        </div>
+    </div>
+</div>

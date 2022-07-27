@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PIZZA-JOHN</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="grey lighten-3">
+<header>
+    <!--<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand waves-effect"><strong class="light-green-text">ПИЦЦА-ДЖОН</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>-->
+    <div class="sidebar-fixed position-fixed">
+        <a href="#" class="logo-wrapper waves-effect">
+            <h1 class="waves-effect">ПИЦЦА-ДЖОН</h1>
+        </a>
+        <div class="line"></div>
+        <div class="user-account">
+            <div class="user_div">
+                <img src="img/overlays/iconAdmin.png" class="rounded mx-auto d-block" alt="User Profile Picture">
+            </div>
+            <div class="dropdown mt-2">
+                <span>Добро пожаловать,</span>
+                <strong>{{user.name}}</strong>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="user-account">
+            <div class="dropdown mt-2">
+                <span>Должность: </span>
+                <strong>{{user.role}}</strong>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="user-account">
+            <div class="dropdown mt-2">
+                <a href="/admin/logout">Выйти</a>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="list-group list-group-flush">
+            {{#if isAdmin}}
+            <a href="{{#if isDashboard}}#{{else}}/admin{{/if}}" class="list-group-item waves-effect {{#if isDashboard}}active one-page{{/if}}">
+                <i class="fa fa-pie-chart mr-3"></i>Панель управления
+            </a>
+            {{/if}}
+            <a href="{{#if isUsers}}#{{else}}/admin/users{{/if}}" class="list-group-item waves-effect {{#if isUsers}}active one-page{{/if}}">
+                <i class="fa fa-user mr-3"></i>Покупатели
+            </a>
+            {{#if isAdmin}}
+            <a href="{{#if isProducts}}#{{else}}/admin/products{{/if}}" class="list-group-item waves-effect {{#if isProducts}}active one-page{{/if}}">
+                <i class="fa fa-table mr-3"></i>Товары
+            </a>
+            {{/if}}
+            <a href="{{#if isOrders}}#{{else}}/admin/orders{{/if}}" class="list-group-item waves-effect {{#if isOrders}}active one-page{{/if}}">
+                <i class="fa fa-money mr-3"></i>Заказы
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="pt-5 max-lg-5" style="min-height: 900px;">
+    {{{body}}}
+</main>
+
+<footer class="page-footer text-center font-small teal mt-4 wow fadeIn">
+    <div class="pt-4">
+        <a href="#" class="btn btn-outline-white">
+            ПИЦЦА-ДЖОН
+        </a>
+    </div>
+    <hr class="my-4">
+    <div class="pb-4">
+        <a>
+            <i class="fa fa-vk mr-3"></i>
+        </a>
+        <a>
+            <i class="fa fa-instagram mr-3"></i>
+        </a>
+        <a>
+            <i class="fa fa-telegram mr-3"></i>
+        </a>
+    </div>
+    <div class="footer-copyright py-3">ПИЦЦА-ДЖОН</div>
+</footer>
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
+<script src="js/modules/wow.min.js"></script>
+<script src="js/modules/animations-extended.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>
+</html>

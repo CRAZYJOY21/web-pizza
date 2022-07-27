@@ -1,0 +1,38 @@
+<div class="container-fluid mt-5">
+    <div class="card mb-4 wow slideInUp">
+        <div class="card-body d-sm-flex justify-content-between">
+            <h4 class="mb-2 mb-sm-0 pt-1">
+                <span>Товары</span>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-custom spacing8">
+                    <thead class="info-color lighten-4">
+                    <tr>
+                        <th>#</th>
+                        <th>Наименование</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each products}}
+                        <tr>
+                            <td scope="row">{{num}}</td>
+                            <td>{{name}}</td>
+                            <td>{{description}}</td>
+                            <td>{{price}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

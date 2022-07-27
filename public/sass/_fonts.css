@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Roboto Thin";
+  src: url("../fonts/Roboto-Thin.eot");
+  src: url("../fonts/Roboto-Thin.eot#iefix") format("embedded-opentype"),
+    url("../fonts/Roboto-Thin.woff") format("woff"),
+    url("../fonts/Roboto-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lobster Regular";
+  src: url("../fonts/Lobster.eot");
+  src: url("../fonts/Lobster.eot#iefix") format("embedded-opentype"),
+    url("../fonts/Lobster.woff") format("woff"),
+    url("../fonts/Lobster.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Segoe UI Light";
+  src: url("../fonts/SegoeUI-Light.eot");
+  src: url("../fonts/SegoeUI-Light.eot#iefix") format("embedded-opentype"),
+    url("../fonts/SegoeUI-Light.woff") format("woff"),
+    url("../fonts/SegoeUI-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

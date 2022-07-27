@@ -1,0 +1,74 @@
+<div class="container-fluid mt-5">
+    <div class="card mb-4 wow slideInUp">
+        <div class="card-body d-sm-flex justify-content-between">
+            <h4 class="mb-2 mb-sm-0 pt-1">
+                <span>Заказы</span>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="light-green lighten-4">
+                    <tr>
+                        <th>#</th>
+                        <th>Пользователь</th>
+                        <th>Почта</th>
+                        <th>Телефон</th>
+                        <th>Адрес</th>
+                        <th>Сумма</th>
+                        <th>Дата и время</th>
+                        <th>Статус</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each orders}}
+                        <tr>
+                            <td scope="row">
+                                {{num}}
+                            </td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{phone}}</td>
+                            <td>{{address}}</td>
+                            <td>{{price}}</td>
+                            <td>{{timestamp}}</td>
+                            <td>
+                                {{#if completed}}
+                                    {{#if canceled}}
+                                    <span class="badge badge-danger">{{statusName}}</span>
+                                    {{else}}
+                                    <span class="badge badge-success">{{statusName}}</span>
+                                    {{/if}}
+                                {{else}}
+                                    <span class="badge badge-warning">{{statusName}}</span>
+                                {{/if}}
+                            </td>
+                            {{#if ../isAdmin}}
+                            <td>
+                                {{#if completed}}
+                                {{else}}
+                                    <a href="/admin/cancel?id={{id}}" class="btn">Отменить</a>
+                                {{/if}}
+                            </td>
+                            {{else}}
+                            <td>
+                                {{#if completed}}
+                                {{else}}
+                                    <a href="/admin/exec?id={{id}}" class="btn">Выполнить</a>
+                                {{/if}}
+                            </td>
+                            {{/if}}
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

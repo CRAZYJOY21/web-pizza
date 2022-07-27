@@ -1,0 +1,55 @@
+<!--main -->
+<main class="main-info pt-5 max-lg-5">
+    {{#if products}}
+        <h1 class="text-aria mb-4">Оформление заказа</h1>
+        <div class="container-fluid mt-5">
+            <div class="row mt-3">
+                <form class="info-form p-5 mt-5" action="/order" method="post">
+
+                    <p class="info-text">Заполните форму оплаты заказа</p>
+                    <!-- Имя -->
+                    {{#if user.name}}{{else}}<input type="text" name="name" class="form-control mb-4 {{#if err.name}}is-invalid{{/if}}" placeholder="Имя" value="{{orderData.name}}">{{/if}}
+                    <!-- Email -->
+                    {{#if user.id}}{{else}}<input type="email" name="id" class="form-control mb-4 {{#if err.id}}is-invalid{{/if}}"  placeholder="E-mail" value="{{orderData.id}}">{{/if}}
+                    <input type="tel" name="phone" class="form-control mb-4 {{#if err.phone}}is-invalid{{/if}}"  placeholder="Номер телефона" value="{{orderData.phone}}">
+                    <!-- Адрес доставки-->
+                    <input type="text" name="address" class="form-control mb-4 {{#if err.address}}is-invalid{{/if}}"  placeholder="Адрес доставки" value="{{orderData.address}}">
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Оставьте своё пожелание или коментарий!</label>
+                        <textarea class="form-control" name="comment" rows="3">{{orderData.comment}}</textarea>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" name="accept" id="accept" class="custom-control-input {{#if err.accept}}is-invalid{{/if}}" value="{{orderData.accept}}">
+                        <label class="custom-control-label" for="accept">Я согласен на обработку персональных
+                            данных</label>
+                    </div>
+                    <!-- Sign in button -->
+                    <button class="btn btn-outline-success btn-block mt-5" type="submit">Оформить заказ</button>
+
+                </form>
+                <!-- Default form subscription -->
+                <form class="basket-info p-5 mt-5">
+                    <div class="alert alert-success" role="alert">
+                        <p class="info-text1">Ваш заказ</p>
+                        <hr class="line-order">
+                        <div class="basket">
+                            {{#each products}}
+                                <p>{{name}} - {{price}} ₽</p>
+                            {{/each}}
+                            {{#if ../more}}
+                                <p>...</p>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="info-num alert alert-success" role="alert">
+                        <p class="info-text1">Итого: {{priceSum}} ₽</p>
+                        <hr class="line-order">
+                    </div>
+                </form>
+            </div>
+        </div>
+    {{else}}
+        <h1 class="text-aria mb-4">Корзина пуста - выберите товары</h1>
+    {{/if}}
+</main>
+<!--/main -->

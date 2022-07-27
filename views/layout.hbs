@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza-John</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/swiper.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/button.css">
+    <link rel="stylesheet" href="/css/adaptive.css">
+    <link rel="stylesheet" href="/css/basket.css">
+    <link rel="stylesheet" href="/css/info.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <div class="col-md-6">
+                <a class="navbar-brand" href="/">
+                    <img src="img/logo.png" alt="logo">
+                    <a class="logo_text" href="/">ПИЦЦА-ДЖОН</a>
+                </a>
+                <p class="text_header">Лучшие пиццы только у нас</p>
+            </div>
+            <div class="col-md-6">
+                <div class="header_phone">
+                    <a href="tel: +89124443311">
+                        +8 (912) 444-33-11
+                    </a>
+                    <p>
+                        Звонок бесплатный
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="icon_header">
+                <a href="#"><img src="img/icon_search.png" alt="поиск"></a>
+                <a href="/cart"><img src="img/icon_buy.png" alt="корзина"></a>
+                {{#if user }}
+                    <a href="/logout"><img src="img/signout.jpg"
+                                           alt="выйти"></a>
+                {{else}}
+                    <a id="signin-link" href="#" data-toggle="modal" data-target="#login-form"><img src="img/icon_2.png"
+                                                                                                    alt="авторизоваться"></a>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
+    <div class="header_menu">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+            <div class="row">
+                <div class="col">
+                    <div class="container_burger" onclick="myFunction(this)">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                        <p>ВСЕ КАТЕГОРИИ</p>
+                    </div>
+
+                    <!--Меню -->
+
+                    <div class="dws-menu">
+                        <ul class="dws-ul">
+                            <li class="dws-li"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>ГЛАВНАЯ</a>
+                            </li>
+                            <li class="dws-li"><a href="/cart"><i class="fa fa-money-check-alt"
+                                                              aria-hidden="true"></i>ОПЛАТА</a></li>
+                            <li class="dws-li"><a href="/contacts"><i class="fa fa-address-card"
+                                                              aria-hidden="true"></i>КОНТАКТЫ</a></li>
+                            {{!-- <li class="dws-li"><a href="#"><i class="fa fa-users" aria-hidden="true"></i>О
+                                НАС</a></li> --}}
+                        </ul>
+                    </div>
+
+
+                    <div class="button">
+                        <div class="sqare1"></div>
+                        <div class="sqare2"></div>
+                        <div class="sqare3"></div>
+                        <div class="sqare4"></div>
+                        <p>НАШЕ МЕНЮ</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+{{{body}}}
+
+
+<!-- Модальное окно с регистрацией и авторизацией -->
+
+<div class="modal fade" id="login-form" tabindex="-1" role="dialog" aria-labelledby="login-form" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="card-title mb-4 mt-1">Авторизация</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="messages"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail">E-mail</label>
+                            <input type="email" class="form-control" id="loginEmail"
+                                   placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPass">Password</label>
+                            <input type="password" class="form-control" id="loginPass" placeholder="Пароль"
+                                   required>
+                        </div>
+                        <button id="submit-login" type="submit" class="btn btn-success btn-lg active">Войти</button>
+                        <p class="text-center"><a href="#" id="register-form-link"
+                                                  class="btn">Регистрация</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="register-form" tabindex="-1" role="dialog" aria-labelledby="reg-form" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="card-title mb-4 mt-1">Регистрация</h4>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="messages"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail">E-mail</label>
+                            <input type="email" class="form-control" id="regEmail"
+                                   placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Введите вашу электронную почту.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPass">Password</label>
+                            <input type="password" class="form-control" id="regPass" placeholder="Пароль"
+                                   required>
+                            <div class="invalid-feedback">
+                                Введите пароль.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPass">Password</label>
+                            <input type="password" class="form-control" id="regPassConfirm"
+                                   placeholder="Пароль (Подтвержение)"
+                                   required>
+                            <div class="invalid-feedback">
+                                Введите пароль ещё раз для подтверждения.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg active">Зарегистрироваться</button>
+                        <p class="text-center"><a href="#" id="login-form-link"
+                                                  class="btn">Авторизация</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue-grey lighten-5">
+
+    <div style="background-color: #21d192;">
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h5 class="mb-0">Присоединяйтесь к нам в соцсетях!</h5>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+
+                    <!-- Telegram +-->
+                    <a class="telegram-ic">
+                        <i class="fab fa-telegram white-text mr-4"> </i>
+                    </a>
+                    <!--Vk -->
+                    <a class="vk-ic">
+                        <i class="fab fa-vk white-text mr-4"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                        <i class="fab fa-instagram white-text"> </i>
+                    </a>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+        </div>
+    </div>
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left mt-5">
+
+        <!-- Grid row -->
+        <div class="row mt-3 dark-grey-text">
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                <!-- Content -->
+                <h1 class=" logo text-uppercase font-weight-bold">ПИЦЦА-ДЖОН</h1>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                    consectetur
+                    adipisicing elit.</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ml-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">ПРОДУКЦИЯ</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a class="dark-grey-text" href="#!">MDBootstrap</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">MDWordPress</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">BrandFlow</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">Bootstrap Angular</a>
+                </p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 ml-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">О КОМПАНИИ</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a class="dark-grey-text" href="#!">Your Account</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">Become an Affiliate</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">Shipping Rates</a>
+                </p>
+                <p>
+                    <a class="dark-grey-text" href="#!">Help</a>
+                </p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 ml-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">КОНТАКТЫ</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fas fa-home mr-3"></i> Санкт-Петербург, Невский пр.140</p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> +8 (912) 444-33-11</p>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-black-50 py-3 ml-4">© 2020 Copyright:
+        <a class="dark-grey-text" href="https://mdbootstrap.com/"> PIZZA-JOHN</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
+<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
+<script src="js/swiper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="js/script.js"></script>
+<script src="js/user.js"></script>
+</body>
+</html>

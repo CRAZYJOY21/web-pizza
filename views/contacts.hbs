@@ -1,0 +1,32 @@
+<main class="basket">
+    <div class="container">
+        <h1>Контакты</h1>
+        {{#if reqReg}}
+        <h5>Пожалуйста зарегитрируйтесь или войдите под своей учётной записью для отправки сообщений</h5>
+        {{else}}
+        <div class="container-fluid mt-5">
+            <div class="row mt-3">
+                <form class="contact-form p-5 mt-5" action="/contacts" method="post">
+                    <p class="info-text">Обратная связь</p>
+                    <div class="form-group">
+                        <label for="message">Оставьте своё пожелание или коментарий!</label>
+                        <textarea class="form-control" name="message" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-outline-success btn-block mt-5" type="submit">Отправить сообщение</button>
+                </form>
+                <form class="basket-form p-5 mt-5" action="/order" method="post">
+                    <p class="info-text">История сообщений</p>
+                    {{#each contacts}}
+                    <div class="form-group">
+                        <h6>Сообщение:</h6>
+                        <p>{{message}}</p>
+                        <h6>Ответ:</h6>
+                        <p>{{reply}}</p>
+                    </div>
+                    {{/each}}
+                </form>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</main>

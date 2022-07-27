@@ -1,0 +1,111 @@
+<div class="container-fluid mt-5">
+    <div class="card mb-4 wow slideInUp">
+        <div class="card-body d-sm-flex justify-content-between">
+            <h4 class="mb-2 mb-sm-0 pt-1">
+                <span>Панель управления</span>
+            </h4>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <div class="row wow fadeIn">
+        <div class="col-md-6 mb-4">
+            <h2 class="text-center">Пользователи</h2>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="blue-grey lighten-4">
+                        <tr>
+                            <th>#</th>
+                            <th>Почта</th>
+                            <th>Адрес</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each users}}
+                            <tr>
+                                <td scope="row">{{num}}</td>
+                                <td>{{id}}</td>
+                                <td>{{address}}</td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <h2 class="text-center">Заказы</h2>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead class="light-green lighten-4">
+                        <tr>
+                            <th>#</th>
+                            <th>Пользователь</th>
+                            <th>Телефон</th>
+                            <th>Сумма</th>
+                            <th>Статус</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each orders}}
+                            <tr>
+                                <td scope="row">
+                                    {{num}}
+                                </td>
+                                <td>{{name}}</td>
+                                <td>{{phone}}</td>
+                                <td>{{price}}</td>
+                                <td>
+                                {{#if completed}}
+                                    {{#if canceled}}
+                                    <span class="badge badge-danger">{{statusName}}</span>
+                                    {{else}}
+                                    <span class="badge badge-success">{{statusName}}</span>
+                                    {{/if}}
+                                {{else}}
+                                    <span class="badge badge-warning">{{statusName}}</span>
+                                {{/if}}
+                                </td>
+                            </tr>
+                        {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <h2 class="text-center">Список товаров</h2>
+    <div class="card mt-4">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover table-custom spacing8">
+                    <thead class="info-color lighten-4">
+                    <tr>
+                        <th>#</th>
+                        <th>Наименование</th>
+                        <th>Описание</th>
+                        <th>Цена</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each products}}
+                        <tr>
+                            <td scope="row">{{num}}</td>
+                            <td>{{name}}</td>
+                            <td>{{description}}</td>
+                            <td>{{price}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
